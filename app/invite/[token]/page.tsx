@@ -9,8 +9,14 @@ type InvitePageProps = {
   params: Promise<{ token: string }>;
 };
 
+const ROLE_LABELS: Record<string, string> = {
+  OWNER: "Proprietário",
+  ADMIN: "Administrador",
+  MEMBER: "Membro",
+};
+
 export const metadata: Metadata = {
-  title: "Accept Workspace Invitation - OpenReply",
+  title: "Aceitar convite — OpenReply",
   robots: { index: false, follow: false },
 };
 
@@ -40,19 +46,21 @@ export default async function InvitePage({ params }: InvitePageProps) {
         </Link>
         <section className="border border-white/10 bg-white/[0.035] p-8">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-100">
-            Workspace invitation
+            Convite para o workspace
           </p>
           <h1 className="mt-4 text-3xl font-black leading-tight text-white">
-            Join {invitation.workspace.name}
+            Entre em {invitation.workspace.name}
           </h1>
           <p className="mt-4 text-sm leading-6 text-zinc-400">
-            You were invited as {invitation.role.toLowerCase()} for{" "}
+            Você foi convidado como{" "}
+            {ROLE_LABELS[invitation.role] ?? invitation.role} para{" "}
             {invitation.email}.
           </p>
           <div className="mt-8">
             {expired ? (
               <p className="text-sm text-error">
-                This invitation has expired. Ask the workspace owner to resend it.
+                Este convite expirou. Peça ao proprietário do workspace para
+                reenviá-lo.
               </p>
             ) : (
               <InvitationAcceptCard
