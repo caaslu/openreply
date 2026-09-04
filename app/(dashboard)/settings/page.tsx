@@ -189,7 +189,7 @@ export default function SettingsPage() {
                   <p className="mt-1 text-xs text-muted">
                     Token expires{" "}
                     {account.tokenExpiresAt
-                      ? new Date(account.tokenExpiresAt).toLocaleDateString()
+                      ? new Date(account.tokenExpiresAt).toLocaleDateString("pt-BR")
                       : "not available"}{" "}
                     · {account.webhookSubscribed ? "Webhook ready" : "Webhook pending"}
                   </p>

@@ -184,7 +184,7 @@ export default function LogsPage() {
                       <StatusBadge status={log.status} />
                     </td>
                     <td className="px-4 py-4 text-muted whitespace-nowrap sm:px-6">
-                      {new Date(log.createdAt).toLocaleString("en-US", {
+                      {new Date(log.createdAt).toLocaleString("pt-BR", {
                         month: "short",
                         day: "numeric",
                         hour: "2-digit",

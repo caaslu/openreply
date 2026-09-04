@@ -18,12 +18,12 @@ function formatNumber(n: number | null): string {
   if (n === null) return "—";
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
   if (n >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
-  return n.toLocaleString();
+  return n.toLocaleString("pt-BR");
 }
 
 function formatDate(iso: string): string {
   const d = new Date(iso);
-  return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  return d.toLocaleDateString("pt-BR", { month: "short", day: "numeric" });
 }
 
 const COUNT_OPTIONS = [
@@ -120,7 +120,7 @@ export default function OverviewPage() {
             // Kept out of the tile row below: that row sums the selected posts,
             // whereas this is a current account-level total.
             <p className="mt-1 text-sm text-muted">
-              {followers.toLocaleString()} followers
+              {followers.toLocaleString("pt-BR")} followers
             </p>
           )}
         </div>

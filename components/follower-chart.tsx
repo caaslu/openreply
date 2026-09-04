@@ -38,11 +38,11 @@ const AXIS_TEXT = "#71717a";
 function formatCompact(n: number): string {
   if (Math.abs(n) >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
   if (Math.abs(n) >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
-  return n.toLocaleString();
+  return n.toLocaleString("pt-BR");
 }
 
 function formatDay(iso: string): string {
-  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(undefined, {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString("pt-BR", {
     month: "short",
     day: "numeric",
     timeZone: "UTC",
@@ -50,7 +50,7 @@ function formatDay(iso: string): string {
 }
 
 function formatSigned(n: number): string {
-  return `${n > 0 ? "+" : ""}${n.toLocaleString()}`;
+  return `${n > 0 ? "+" : ""}${n.toLocaleString("pt-BR")}`;
 }
 
 function ChartTooltip({
@@ -67,7 +67,7 @@ function ChartTooltip({
     <div className="rounded border border-border bg-surface px-3 py-2 text-xs shadow-lg">
       <p className="text-muted">{formatDay(point.date)}</p>
       <p className="mt-1 font-semibold text-foreground">
-        {point.followers.toLocaleString()} followers
+        {point.followers.toLocaleString("pt-BR")} followers
       </p>
       {point.delta !== null && point.delta !== 0 && (
         <p className={point.delta > 0 ? "text-success" : "text-error"}>
@@ -104,7 +104,7 @@ export default function FollowerChart({
           <p className="mt-1 text-sm text-muted">
             {current === null
               ? "Follower count unavailable"
-              : `${current.toLocaleString()} now`}
+              : `${current.toLocaleString("pt-BR")} now`}
             {net !== null && (
               <>
                 {" · "}
@@ -155,7 +155,7 @@ export default function FollowerChart({
                     {formatDay(p.date)}
                   </td>
                   <td className="py-2 px-3 text-right text-muted">
-                    {p.followers.toLocaleString()}
+                    {p.followers.toLocaleString("pt-BR")}
                   </td>
                   <td className="py-2 pl-3 text-right text-muted">
                     {p.delta === null ? "—" : formatSigned(p.delta)}

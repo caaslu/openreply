@@ -31,8 +31,8 @@ function formatTime(iso: string | null): string {
   const now = new Date();
   const sameDay = d.toDateString() === now.toDateString();
   return sameDay
-    ? d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })
-    : d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+    ? d.toLocaleTimeString("pt-BR", { hour: "numeric", minute: "2-digit" })
+    : d.toLocaleDateString("pt-BR", { month: "short", day: "numeric" });
 }
 
 export default function InboxPage() {

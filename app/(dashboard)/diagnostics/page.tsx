@@ -53,7 +53,7 @@ interface DiagnosticsData {
 }
 
 function formatDate(value: string) {
-  return new Date(value).toLocaleString();
+  return new Date(value).toLocaleString("pt-BR");
 }
 
 function EmptyState({ label }: { label: string }) {
