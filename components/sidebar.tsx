@@ -6,6 +6,7 @@
  * Text-only nav with active state and workspace section.
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -56,8 +57,14 @@ export default function Sidebar({
           className="px-6 py-5 border-b border-border"
           style={{ paddingTop: "calc(1.25rem + env(safe-area-inset-top))" }}
         >
-          <Link href="/dashboard" className="text-base font-semibold">
-            OpenReply
+          <Link href="/dashboard" className="inline-flex">
+            <Image
+              src="/v2_logo.svg"
+              alt="Designerz OpenReply"
+              width={1301}
+              height={182}
+              className="h-6 w-auto"
+            />
           </Link>
         </div>
 

@@ -90,7 +90,7 @@ export default async function LoginPage({
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-indigo-500/25 transition-all hover:shadow-indigo-500/30"
+                className="btn-brand w-full"
               >
                 Enviar link de acesso
               </button>

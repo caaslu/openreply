@@ -151,10 +151,10 @@ export default function DashboardPage() {
 
         {/* Top Keywords */}
         <div className="lg:col-span-1 panel rounded p-4 sm:p-6">
-          <h2 className="text-sm font-semibold text-foreground mb-4">Principais palavras-chave</h2>
+          <h2 className="text-sm font-semibold text-foreground mb-4">Palavras-chave</h2>
           <div className="space-y-3">
             {stats?.topKeywords.length === 0 && (
-              <p className="text-sm text-muted py-8">Nenhuma palavra-chave correspondente ainda</p>
+              <p className="text-sm text-muted py-8">Nenhuma correspondência ainda</p>
             )}
             {stats?.topKeywords.map((keyword) => (
               <div key={keyword.keyword} className="flex items-center justify-between gap-3">

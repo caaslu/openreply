@@ -139,7 +139,7 @@ export default function LogsPage() {
           <table className="w-full min-w-[760px] text-sm">
             <thead>
               <tr className="border-b border-border text-left">
-                <th className="px-4 py-4 text-xs font-semibold text-muted uppercase tracking-wider sm:px-6">Autor</th>
+                <th className="px-4 py-4 text-xs font-semibold text-muted uppercase tracking-wider sm:px-6">Quem comentou</th>
                 <th className="px-4 py-4 text-xs font-semibold text-muted uppercase tracking-wider sm:px-6">Comentário</th>
                 <th className="px-4 py-4 text-xs font-semibold text-muted uppercase tracking-wider sm:px-6">Campanha</th>
                 <th className="px-4 py-4 text-xs font-semibold text-muted uppercase tracking-wider sm:px-6">Conta</th>

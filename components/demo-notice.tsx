@@ -70,16 +70,16 @@ export function DemoNotice({ variant }: { variant: "banner" | "panel" }) {
 
   if (variant === "banner") {
     return (
-      <div className="relative border-b border-orange-200 bg-orange-50">
-        <p className="mx-auto w-full max-w-6xl px-10 py-2 text-center text-xs leading-5 text-zinc-700 sm:px-14 sm:text-sm">
-          <span className="font-bold text-zinc-900">{DEMO_HOST}</span> é uma
+      <div className="relative border-b border-border bg-surface">
+        <p className="mx-auto w-full max-w-6xl px-10 py-2 text-center text-xs leading-5 text-muted sm:px-14 sm:text-sm">
+          <span className="font-bold text-foreground">{DEMO_HOST}</span> é uma
           demo. O OpenReply é auto-hospedado — entrar aqui não envia DMs da
           sua conta.{" "}
           <a
             href={SETUP_DOCS_URL}
             target="_blank"
             rel="noreferrer"
-            className="font-bold text-orange-700 underline underline-offset-2 transition hover:text-orange-800"
+            className="font-bold text-accent underline underline-offset-2 transition hover:text-accent-hover"
           >
             Implante sua própria cópia
           </a>
@@ -89,7 +89,7 @@ export function DemoNotice({ variant }: { variant: "banner" | "panel" }) {
           type="button"
           onClick={dismiss}
           aria-label="Dispensar aviso da demo"
-          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-zinc-500 transition hover:text-zinc-900 sm:right-4"
+          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-muted transition hover:text-foreground sm:right-4"
         >
           <DismissIcon />
         </button>

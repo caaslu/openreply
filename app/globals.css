@@ -4,20 +4,28 @@
    Plain and functional. No gradients, glass, glow, or animation. */
 
 @theme inline {
-  --color-background: #ffffff;
-  --color-foreground: #18181b;
-  --color-surface: #f7f7f8;
-  --color-surface-hover: #efeff1;
-  --color-border: #e4e4e7;
-  --color-border-hover: #d4d4d8;
-  --color-muted: #71717a;
-  --color-accent: #f97316;
-  --color-accent-hover: #ea580c;
-  --color-success: #16a34a;
-  --color-error: #dc2626;
-  --color-warning: #d97706;
-  --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-background: #FFFFFF;
+  --color-foreground: #1A1523;
+  --color-surface: #FAFAFB;
+  --color-surface-hover: #F5F3F8;
+  --color-border: #E8E4EE;
+  --color-border-hover: #D8D2E4;
+  --color-muted: #6B6480;
+  --color-accent: #7B3FD4;
+  --color-accent-hover: #6A2FC0;
+  --color-success: #0E9F6E;
+  --color-error: #D1244B;
+  --color-warning: #C77B2E;
+  --color-accent-purple: #B47CFD;
+  --color-accent-pink: #FF7FC2;
+  --color-link: #CC3366;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-sora), system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
+}
+
+:root {
+  --gradient-brand: linear-gradient(120deg, #B47CFD 20%, #FF7FC2 60%);
 }
 
 html {
@@ -28,6 +36,64 @@ body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+@utility btn-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  background-color: #B47CFD;
+  background-image: var(
+    --gradient-brand,
+    linear-gradient(120deg, #B47CFD 20%, #FF7FC2 60%)
+  );
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: opacity 150ms ease;
+
+  &:hover {
+    opacity: 0.92;
+  }
+}
+
+@utility btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 1px solid #E8E4EE;
+  border-radius: 30px;
+  background-color: #FFFFFF;
+  color: #1A1523;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease;
+
+  &:hover {
+    border-color: #D8D2E4;
+    background-color: #F5F3F8;
+  }
 }
 
 /* Focus ring — visible, for keyboard users. */
