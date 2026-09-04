@@ -2,7 +2,7 @@
  * Status label for DM status. Plain text; color carries the state.
  */
 
-const statusConfig: Record<string, { text: string; label: string }> = {
+export const statusConfig: Record<string, { text: string; label: string }> = {
   SENT: { text: "text-success", label: "Enviada" },
   FAILED: { text: "text-error", label: "Falha" },
   PENDING: { text: "text-warning", label: "Pendente" },
