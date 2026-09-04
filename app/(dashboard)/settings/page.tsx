@@ -102,7 +102,7 @@ export default function SettingsPage() {
       setMembersData(payload.data);
       setInviteEmail("");
     } else {
-      setMemberError(payload.error ?? "Could not invite member");
+      setMemberError(payload.error ?? "Não foi possível convidar o membro");
     }
     setBusy(null);
   }

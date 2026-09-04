@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        error: "Instagram account not connected. Please connect your account first.",
+        error: "Conta do Instagram não conectada. Conecte sua conta primeiro.",
       },
       { status: 400 }
     );
@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
   } catch (err) {
     console.error("[Instagram Posts] Error:", err);
     return NextResponse.json(
-      { success: false, error: "Failed to fetch Instagram posts" },
+      { success: false, error: "Falha ao buscar publicações do Instagram" },
       { status: 500 }
     );
   }

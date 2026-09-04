@@ -54,10 +54,10 @@ export default function OverviewPage() {
           setData(res.data);
           setError(null);
         } else {
-          setError(res.error ?? "Failed to load overview");
+          setError(res.error ?? "Falha ao carregar a visão geral");
         }
       })
-      .catch(() => setError("Failed to load overview"))
+      .catch(() => setError("Falha ao carregar a visão geral"))
       .finally(() => setLoading(false));
   }, [selectedAccountId, count]);
 

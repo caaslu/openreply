@@ -42,7 +42,7 @@ export default function ImportCampaignsPage() {
     setError(null);
     const parsed = parseCsv(csv);
     if (parsed.length === 0) {
-      setError("Paste a CSV with a header row and at least one campaign.");
+      setError("Cole um CSV com uma linha de cabeçalho e pelo menos uma campanha.");
       return;
     }
 
@@ -56,7 +56,7 @@ export default function ImportCampaignsPage() {
         .slice(0, 10);
       const dmMessage = (r.dm_message ?? r.message ?? "").trim();
       if (keywords.length === 0 || !dmMessage) {
-        setError(`Row ${i + 1} is missing keywords or a message.`);
+        setError(`A linha ${i + 1} está sem palavras-chave ou mensagem.`);
         return;
       }
       rows.push({
@@ -76,7 +76,7 @@ export default function ImportCampaignsPage() {
         window.localStorage.setItem(IMPORT_ACCOUNT_KEY, selectedAccountId);
       }
     } catch {
-      setError("Could not stage the import in this browser.");
+      setError("Não foi possível preparar a importação neste navegador.");
       return;
     }
     router.push("/campaigns/new");

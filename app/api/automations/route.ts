@@ -286,7 +286,7 @@ export async function POST(request: NextRequest) {
 
   if (!canManageWorkspace(context.role)) {
     return NextResponse.json(
-      { success: false, error: "Only owners and admins can create campaigns" },
+      { success: false, error: "Apenas proprietários e administradores podem criar campanhas" },
       { status: 403 }
     );
   }
@@ -300,7 +300,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        error: "Invalid input",
+        error: "Dados inválidos",
         details: parsed.error.flatten(),
       },
       { status: 400 }
@@ -329,14 +329,14 @@ export async function POST(request: NextRequest) {
 
   if (!workspace) {
     return NextResponse.json(
-      { success: false, error: "Workspace not found" },
+      { success: false, error: "Workspace não encontrado" },
       { status: 404 }
     );
   }
 
   if (!instagramAccount) {
     return NextResponse.json(
-      { success: false, error: "Connect Instagram before creating campaigns" },
+      { success: false, error: "Conecte o Instagram antes de criar campanhas" },
       { status: 400 }
     );
   }
@@ -456,7 +456,7 @@ export async function PATCH(request: NextRequest) {
 
   if (!canManageWorkspace(context.role)) {
     return NextResponse.json(
-      { success: false, error: "Only owners and admins can update campaigns" },
+      { success: false, error: "Apenas proprietários e administradores podem atualizar campanhas" },
       { status: 403 }
     );
   }
@@ -466,7 +466,7 @@ export async function PATCH(request: NextRequest) {
   const automationId = request.nextUrl.searchParams.get("id");
   if (!automationId) {
     return NextResponse.json(
-      { success: false, error: "Missing campaign ID" },
+      { success: false, error: "ID da campanha ausente" },
       { status: 400 }
     );
   }
@@ -478,7 +478,7 @@ export async function PATCH(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        error: "Invalid input",
+        error: "Dados inválidos",
         details: parsed.error.flatten(),
       },
       { status: 400 }
@@ -491,7 +491,7 @@ export async function PATCH(request: NextRequest) {
 
   if (!existing) {
     return NextResponse.json(
-      { success: false, error: "Campaign not found" },
+      { success: false, error: "Campanha não encontrada" },
       { status: 404 }
     );
   }
@@ -618,7 +618,7 @@ export async function DELETE(request: NextRequest) {
 
   if (!canManageWorkspace(context.role)) {
     return NextResponse.json(
-      { success: false, error: "Only owners and admins can delete campaigns" },
+      { success: false, error: "Apenas proprietários e administradores podem excluir campanhas" },
       { status: 403 }
     );
   }
@@ -628,7 +628,7 @@ export async function DELETE(request: NextRequest) {
   const automationId = request.nextUrl.searchParams.get("id");
   if (!automationId) {
     return NextResponse.json(
-      { success: false, error: "Missing campaign ID" },
+      { success: false, error: "ID da campanha ausente" },
       { status: 400 }
     );
   }
@@ -639,7 +639,7 @@ export async function DELETE(request: NextRequest) {
 
   if (!existing) {
     return NextResponse.json(
-      { success: false, error: "Campaign not found" },
+      { success: false, error: "Campanha não encontrada" },
       { status: 404 }
     );
   }

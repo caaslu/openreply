@@ -29,7 +29,7 @@ export default function InvitationAcceptCard({
       window.location.assign("/dashboard");
       return;
     }
-    setMessage(payload.error ?? "Could not accept invitation");
+    setMessage(payload.error ?? "Não foi possível aceitar o convite");
     setBusy(false);
   }
 

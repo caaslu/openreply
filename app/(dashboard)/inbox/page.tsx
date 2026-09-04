@@ -103,10 +103,10 @@ export default function InboxPage() {
           writeCache(convCacheKey(selectedAccountId), data.data.conversations);
           setConvError(null);
         } else if (!silent) {
-          setConvError(data.error ?? "Failed to load conversations");
+          setConvError(data.error ?? "Falha ao carregar conversas");
         }
       } catch {
-        if (!silent) setConvError("Failed to load conversations");
+        if (!silent) setConvError("Falha ao carregar conversas");
       } finally {
         if (!silent) setConvLoading(false);
       }
@@ -238,12 +238,12 @@ export default function InboxPage() {
         // Roll the optimistic message back and restore the draft so it's not lost.
         setMessages((prev) => prev.filter((m) => m.id !== optimistic.id));
         setDraft(text);
-        setSendError(data.error ?? "Failed to send message");
+        setSendError(data.error ?? "Falha ao enviar mensagem");
       }
     } catch {
       setMessages((prev) => prev.filter((m) => m.id !== optimistic.id));
       setDraft(text);
-      setSendError("Failed to send message");
+      setSendError("Falha ao enviar mensagem");
     } finally {
       setSending(false);
     }

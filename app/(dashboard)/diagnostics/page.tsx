@@ -231,7 +231,7 @@ export default function DiagnosticsPage() {
                     {event.object ?? "Instagram webhook"}
                   </p>
                   <p className="mt-1 text-xs text-error">
-                    {event.errorMessage ?? "Unknown error"}
+                    {event.errorMessage ?? "Erro desconhecido"}
                   </p>
                   <p className="mt-1 text-xs text-muted">
                     {formatDate(event.createdAt)}
